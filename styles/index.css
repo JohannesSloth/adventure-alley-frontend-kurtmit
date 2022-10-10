@@ -4,7 +4,7 @@
   }
   
   body {
-    background-image: url('images/adventureBG.png');
+    background-image: url('../images/adventureBG.png');
     font-family: sans-serif;
     margin: 0;
     padding: 0;
