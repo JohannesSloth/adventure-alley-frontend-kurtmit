@@ -1,0 +1,60 @@
+/* Generelt START */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+body {
+    background-image: url('../images/adventureBG.png');
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    height: 60px;
+    background-color: #ffffff00;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+
+  }
+/* Generelt SLUT */
+
+/* Cards START */
+
+.infostuff {
+    height: 120px;
+    width: 600px;
+    
+    margin-left: 13%;
+    margin-top: 4%;
+    background-color: white;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 2%;
+    size: auto;
+}
+
+.card-img-top {
+    width:100%;
+    height: 300px;
+}
+
+.card {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+/* Cards SLUT */
