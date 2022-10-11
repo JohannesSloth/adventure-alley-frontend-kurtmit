@@ -38,4 +38,3 @@ export function handleButtonClick(evt) {
     }
     return res.json()
   }
-
