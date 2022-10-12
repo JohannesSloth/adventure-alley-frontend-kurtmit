@@ -5,7 +5,7 @@ const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 
-loginButton.addEventListener("click", async (e) => {
+/*loginButton.addEventListener("click", async (e) => {
     e.preventDefault();
     const username = loginForm.username.value;
     const password = loginForm.password.value;
@@ -22,8 +22,17 @@ loginButton.addEventListener("click", async (e) => {
             loginErrorMsg.style.opacity = 1;
         }
     }
-        
-    
-}
+})*/
 
-)
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username === "1" && password === "2") {
+        alert("You have successfully logged in.");
+        location.reload();
+    } else {
+        loginErrorMsg.style.opacity = 1;
+    }
+})
