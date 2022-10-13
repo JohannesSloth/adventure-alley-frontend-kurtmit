@@ -61,13 +61,17 @@ document.getElementById("outer").onclick = bookTime*/
 
 //const startTime1 = document.getElementById("outer").onclick = getTargetId()
 
-document.getElementById("outer").onclick = openForm(event)
+document.getElementById("outer").onclick = openForm
 document.getElementById("btn-close-form").onclick = closeForm
 
-function openForm(event) {
+let time = ""
+
+function openForm(evt) {
+    console.log(evt.target.id);
+    time = evt.target.id
     document.getElementById("popupForm").style.display = "block";
-    const startTime = event.target.id
-    console.log(startTime);
+    //const startTime = event.target.id
+    //console.log(startTime);
   }
 function closeForm() {
     document.getElementById("popupForm").style.display = "none";
@@ -94,7 +98,7 @@ function makeReservation(){
     const reservationDetails = {
         numberOfParticipants: numberOfParticipants,
         date: document.getElementById("input-date").value,
-        startTime: startTime1
+        startTime: time
     }
     alert(reservationDetails.startTime)
 }
