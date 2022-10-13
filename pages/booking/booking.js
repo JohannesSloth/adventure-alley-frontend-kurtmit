@@ -1,18 +1,21 @@
-document.getElementsByTagName("tr").onclick = colorCheck
+const time = document.getElementById("thead").onclick = findTargetId
 
 
-function colorCheck(evt) {
-    const targetId = target.getElementById
-    console.log(targetId)
+function findTargetId(event){
+    const targetId = event.target.id
+}
+
+
+
+document.getElementById("btn-activity-sumo").onclick = checkAvailability
+document.getElementById("btn-activity-minigolf").onclick = checkAvailability
+document.getElementById("btn-activity-paintball").onclick = checkAvailability
+document.getElementById("btn-activity-gokart").onclick = checkAvailability
+
+function checkAvailability(activity){
+    const date = document.getElementById("input-date").value
+    const activityName = activity.target.value
+    
+    
 
 }
-const target = evt.target
-
-const btn = document.getElementById(target.getElementById);
-
-btn.addEventListener('click', function onClick() {
-  btn.style.backgroundColor = 'green';
-});
-
-
-
