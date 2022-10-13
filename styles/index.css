@@ -65,6 +65,7 @@ max-width: auto;
   font-family: nimbus;
   text-align: center;
   font-size: 20px;
-  margin-top: 10%;
-  margin-left: 40%;
+  margin-top: 15%;
+  margin-left: 40%; 
+  box-sizing: 24px 40px;
 }
