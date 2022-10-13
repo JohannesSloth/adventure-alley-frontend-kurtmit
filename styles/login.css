@@ -1,23 +1,27 @@
 html {
     height: 100%;
-  }
-  
-  body {
+}
+
+body {
     height: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
     justify-items: center;
     align-items: center;
-    background-image: url('../images/Plainbaggrund.png'); 
-    font-family: sans-serif;  
-  }
+    background-image: url('../images/Plainbaggrund.png');
+    font-family: sans-serif;
+}
 
-  h2 {
+h1 {
     padding-top: 15%;
-  }
-  
-  .main-container {
+}
+h4 {
+    padding-right: 65%;
+    transform: rotate(-35deg);
+}
+
+.main-container {
     width: 30%;
     height: 50%;
     display: grid;
@@ -25,17 +29,18 @@ html {
     align-items: center;
     background-color: white;
     box-shadow: 0 8px 16px 0 black;
-  }
-  
-  .login-error {
+}
+
+.login-error {
     width: 100%;
     height: 10px;
     display: grid;
     justify-items: center;
     align-items: center;
-  }
-  
-  #login-error-msg {
+    margin-bottom: 33px;;
+}
+
+#login-error-msg {
     width: 35%;
     text-align: center;
     margin: 0;
@@ -46,36 +51,36 @@ html {
     border: 1px solid #ffffff;
     background-color: #ff0000;
     opacity: 0;
-  }
-  
-  .login-error-msg2 {
-    display: block;
-  }
+}
 
-  
-  
-  #login-form {
+.login-error-msg2 {
+    display: block;
+}
+
+
+
+#login-form {
     align-self: flex-start;
     display: grid;
     justify-items: center;
     align-items: center;
     padding-bottom: 5%;
-  }
-  
-  .login-form::placeholder {
+}
+
+.login-form::placeholder {
     color: #423434;
-  }
-  
-  .login {
+}
+
+.login {
     border: none;
     border-bottom: 1px solid #3a3a3a;
     margin-bottom: 10px;
     border-radius: 3px;
     outline: none;
     padding: 0px 0px 5px 5px;
-  }
-  
-  #login-submit {
+}
+
+#login-submit {
     width: 100%;
     padding: 7px;
     margin-top: 5%;
@@ -86,17 +91,23 @@ html {
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
-  }
+}
 
-  #back-btn {
-        width: 100%;
-        padding: 7px;
-        margin-top: 5%;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-weight: bold;
-        background-color: #3a3a3a;
-        cursor: pointer;
-        outline: none;
-  }
+#back-btn {
+    width: 100%;
+    padding: 7px;
+    margin-top: 5%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.fa-eye {
+    margin-left: -25px;
+    cursor: pointer;
+}
