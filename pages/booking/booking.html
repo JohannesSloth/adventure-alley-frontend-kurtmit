@@ -66,16 +66,43 @@
         <div class="loginPopup">
             <div class="formPopup" id="popupForm">
                 <form class="formContainer">
-                    <h2>Please Log in</h2>
-                    <label for="email">
+                    <h2>Reserver tid</h2>
+                    
+                    <label for="custName">
+                        <strong>Navn</strong>
+                    </label>
+                    <input type="text" id="custName" placeholder="Dit navn" name="custName" required>
+                    
+                    <label for="custEmail">
                         <strong>E-mail</strong>
                     </label>
-                    <input type="text" id="email" placeholder="Your Email" name="email" required>
-                    <label for="psw">
-                        <strong>Password</strong>
+                    <input type="text" id="custEmail" placeholder="Din email" name="custEmail" required>
+
+                    <label for="custPhone">
+                        <strong>Telefonnummer</strong>
                     </label>
-                    <input type="password" id="psw" placeholder="Your Password" name="psw" required>
-                    <button type="submit" class="btn">Log in</button>
+                    <input type="text" id="custPhone" placeholder="Dit telefonnummer" name="custPhone" required>
+                    
+                    <label for="custParticipants">
+                        <strong>Antal deltagere</strong>
+                    </label>
+                    <input type="text" id="custParticipants" placeholder="Antal deltagere" name="custParticipants" required>
+                    
+                    
+                    <h4>For firmakunder:</h4>
+
+                    <label for="compName">
+                        <strong>Firmanavn</strong>
+                    </label>
+                    <input type="text" id="compName" placeholder="Jeres firmanavn" name="compName" required>
+                    
+                    <label for="compCVR">
+                        <strong>Firmanavn</strong>
+                    </label>
+                    <input type="text" id="compCVR" placeholder="Firmaets CVR" name="compCVR" required>
+                    
+                    
+                    <button type="submit" class="btn" id="submitReservation">Reserver</button>
                     <button type="button" id="btn-close-form" class="btn cancel">Close</button>
                 </form>
             </div>
