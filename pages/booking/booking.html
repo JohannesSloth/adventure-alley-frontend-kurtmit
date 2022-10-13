@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./booking.js" type="module"></script>
+    <link rel="stylesheet" href="../../styles/booking.css">
 </head>
 
 <body>
@@ -15,23 +16,38 @@
 
         <div>
             <h5>Vælg dag</h5>
-            <div><label for="input-date">Dato:</label><input placeholder="ddMMyyyy" id="input-date"></div>
-            <button id="btn-get-date-booking">Hent dagens bookinger</button>
+            <div><label for="input-date">Dato:</label><input placeholder="dd-mm-yyyy" id="input-date"></div>
         </div>
 
         <div>
             <h5>Vælg aktiviteter</h5>
-            <div id="activity-div">
-                <button id="btn-activity-sumo" value="sumo" >Sumobrydning</button>
+            <div>
+                <button id="btn-activity-sumo" value="sumo">Sumobrydning</button>
                 <button id="btn-activity-minigolf" value="minigolf">Minigolf</button>
-                <button id="btn-activity-paintball" value="Paintball" >Paintball</button>
-                <button id="btn-activity-gokart" value="Gokart" >Gokart</button>
+                <button id="btn-activity-paintball" value="paintball">Paintball</button>
+                <button id="btn-activity-gokart" value="gokart">Gokart</button>
             </div>
         </div>
 
         <div>
             <h3>Tider</h3>
-            <table class="table">
+
+            <div id="outer">
+                <div id="10" class="my-div">10:00 - 11:00</div>
+                <div id="11" class="my-div">11:00 - 12:00</div>
+                <div id="12" class="my-div">12:00 - 13:00</div>
+                <div id="13" class="my-div">13:00 - 14:00</div>
+                <div id="14" class="my-div">14:00 - 15:00</div>
+                <div id="15" class="my-div">15:00 - 16:00</div>
+                <div id="16" class="my-div">16:00 - 17:00</div>
+                <div id="17" class="my-div">17:00 - 18:00</div>
+                <div id="18" class="my-div">18:00 - 19:00</div>
+                <div id="19" class="my-div">19:00 - 20:00</div>
+                <div id="20" class="my-div">20:00 - 21:00</div>
+                <div id="21" class="my-div">21:00 - 22:00</div>
+            </div>
+
+            <!--<table class="table">
                 <thead id="thead">
                     <th id="ts-9-10">9:00 - 10:00</th>
                     <th id="ts-10-11">10:00 - 11:00</th>
@@ -45,10 +61,51 @@
                     <th id="ts-20-21">20:00 - 21:00</th>
                     <th id="ts-21-22">21:00 - 22:00</th>
                 </thead>
-            </table>
+            </table>-->
         </div>
-    </div>
+        <div class="loginPopup">
+            <div class="formPopup" id="popupForm">
+                <form class="formContainer">
+                    <h2>Reserver tid</h2>
+                    
+                    <label for="custName">
+                        <strong>Navn</strong>
+                    </label>
+                    <input type="text" id="custName" placeholder="Dit navn" name="custName" required>
+                    
+                    <label for="custEmail">
+                        <strong>E-mail</strong>
+                    </label>
+                    <input type="text" id="custEmail" placeholder="Din email" name="custEmail" required>
 
+                    <label for="custPhone">
+                        <strong>Telefonnummer</strong>
+                    </label>
+                    <input type="text" id="custPhone" placeholder="Dit telefonnummer" name="custPhone" required>
+                    
+                    <label for="custParticipants">
+                        <strong>Antal deltagere</strong>
+                    </label>
+                    <input type="text" id="custParticipants" placeholder="Antal deltagere" name="custParticipants" required>
+                    
+                    
+                    <h4>For firmakunder:</h4>
+
+                    <label for="compName">
+                        <strong>Firmanavn</strong>
+                    </label>
+                    <input type="text" id="compName" placeholder="Jeres firmanavn" name="compName" required>
+                    
+                    <label for="compCVR">
+                        <strong>Firmanavn</strong>
+                    </label>
+                    <input type="text" id="compCVR" placeholder="Firmaets CVR" name="compCVR" required>
+                    
+                    
+                    <button type="submit" class="btn" id="submitReservation">Reserver</button>
+                    <button type="button" id="btn-close-form" class="btn cancel">Close</button>
+                </form>
+            </div>
 
 </body>
 
