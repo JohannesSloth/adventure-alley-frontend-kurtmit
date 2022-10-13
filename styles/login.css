@@ -9,7 +9,7 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-image: url('../images/Plainbaggrund.png');
+    background-image: url('../images/login.jpg');
     font-family: sans-serif;
 }
 
@@ -18,7 +18,7 @@ h1 {
 }
 h4 {
     padding-right: 65%;
-    transform: rotate(-35deg);
+    transform: rotate(-25deg);
 }
 
 .main-container {
