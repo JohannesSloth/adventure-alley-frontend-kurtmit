@@ -70,8 +70,6 @@ function openForm(evt) {
     console.log(evt.target.id);
     time = evt.target.id
     document.getElementById("popupForm").style.display = "block";
-    //const startTime = event.target.id
-    //console.log(startTime);
   }
 function closeForm() {
     document.getElementById("popupForm").style.display = "none";
@@ -99,6 +97,7 @@ function makeReservation(){
         numberOfParticipants: numberOfParticipants,
         date: document.getElementById("input-date").value,
         startTime: time
+        
     }
     alert(reservationDetails.startTime)
 }
