@@ -63,4 +63,21 @@
   .openButton:hover {
     opacity: 1;
   }
-  .my-div {width: 100px; height: 50px;background-color:green; margin:1px;}
+  .my-div {
+    width: 100px; 
+    height: 50px;
+    background-color:rgba(27, 143, 27, 0); 
+    margin:1px; 
+    text-align: center; 
+    justify-content: center;
+    border: 1px solid #ccd5e2;
+    color: #ccd5e2;
+    margin-bottom: 5px;
+    min-height: 50px;
+    line-height: 50px;
+  }
+  #div-everything {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }

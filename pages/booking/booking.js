@@ -1,36 +1,32 @@
 import {reservationURL} from "../../util.js"
-import { handleHttpErrors } from "../../util.js";
-//console.log("hey");
+import { handleHttpErrors } from "../../util.js"
+import {customerURL} from "../../util.js"
 
 
-/*function getTargetId(event) { 
-    const targetId = event.target.id
-    console.log(targetId)
-    return targetId
-}*/
+
+document.getElementById("outer").style.display = "none"
 
 document.getElementById("btn-activity-sumo").onclick = checkAvailability
 document.getElementById("btn-activity-minigolf").onclick = checkAvailability
 document.getElementById("btn-activity-paintball").onclick = checkAvailability
 document.getElementById("btn-activity-gokart").onclick = checkAvailability
 
-/*function greenDivs(){
-    for (let i = 10; i < 23; i++){
-        if (1 === 1){
-            document.getElementById(i + '').style.backgroundColor = 'green'
-        }
-    }
-}*/
+let activityName = ''
+let listOfReservedTimeslots = []
 
 export async function checkAvailability(activity){
     const date = document.getElementById("input-date").value
-    const activityName = activity.target.value
+    if (date !== "") {
+        document.getElementById("outer").style.display = "block"
+    }
+
+    activityName = activity.target.value
     const url = reservationURL + activityName + '/' + date
 
-    console.log(activityName);
+    console.log(date);
     
     const dayReservations = await fetch(url).then(r => r.json())
-    const listOfReservedTimeslots = dayReservations.map(res => res.startTime)
+    listOfReservedTimeslots = dayReservations.map(res => res.startTime)
     
     for (let i = 10; i < 23; i++){
         changecolor('green', i + '')
@@ -44,40 +40,38 @@ function changecolor(color, elementId){
     document.getElementById(elementId).style.backgroundColor = color
 }
 
-/*function bookTime(event){
-    const targetStartTime = event.target.id
-    console.log(targetStartTime);
-    const custName = prompt("Indtast dit navn: ")
-    const custEmail = prompt("Indtast din email: ")
-    const custPhoneNumber = prompt("Indtast dit telefonnummer: ")
-    const isCompany = prompt("Bestiller du for et firma? (ja/nej)")
-    if (isCompany === "ja"){
-        const compName = prompt("Indtast navnet på jeres firma: ")
-        const compCVR = prompt("Indtast firmaets CVR-nummer: ")
-    }
-}
-
-document.getElementById("outer").onclick = bookTime*/
-
-//const startTime1 = document.getElementById("outer").onclick = getTargetId()
-
 document.getElementById("outer").onclick = openForm
 document.getElementById("btn-close-form").onclick = closeForm
 
 let time = ""
 
+document.getElementById("error-msg").innerText = "Der er fejl i reservationen. Prøv igen."
+document.getElementById("error-msg").style.display = "none"
+
 function openForm(evt) {
+    document.getElementById("error-msg").style.display = "none"
     console.log(evt.target.id);
     time = evt.target.id
-    document.getElementById("popupForm").style.display = "block";
-  }
+    if (time !== "outer" && !listOfReservedTimeslots.includes(time)){
+        document.getElementById("popupForm").style.display = "block";
+    }
+    if (!listOfReservedTimeslots.includes(time)){
+        document.getElementById("reservation-activity").innerText = "Aktivitet: " + activityName + "\n Tidspunkt: Kl. " + time
+    } else if (time === "outer") {
+        document.getElementById("reservation-activity").innerText = "Aktivitet: " + activityName + "\n Vælg venligst et tidspunkt"
+        time = "invalid"
+        } else {
+            document.getElementById("reservation-activity").innerText = "Aktivitet: " + activityName + "\n Kl. " + time + " er booket"
+            time = "invalid"
+        }
+}
 function closeForm() {
     document.getElementById("popupForm").style.display = "none";
   }
 
 document.getElementById('submitReservation').onclick = makeReservation
 
-function makeReservation(){
+async function makeReservation(){
     const custName = document.getElementById('custName').value
     const custEmail = document.getElementById('custEmail').value
     const custPhone = document.getElementById('custPhone').value
@@ -86,21 +80,31 @@ function makeReservation(){
     const compCVR = document.getElementById('compCVR').value
 
     const customerDetails = {
-        Name: custName,
-        Email: custEmail,
-        Phone: custPhone,
-        CompanyName: compName,
-        CompanyCVR: compCVR
+        customerName: custName,
+        customerEmail: custEmail,
+        phoneNumber: custPhone,
+        companyName: compName,
+        cvrNumber: compCVR
     }
 
     const reservationDetails = {
         numberOfParticipants: numberOfParticipants,
         date: document.getElementById("input-date").value,
-        startTime: time
-        
+        startTime: time,
+        customerEmail: custEmail,
+        activityName: activityName
     }
-    alert(reservationDetails.startTime)
+    
+    if (time != "invalid") {
+        const options = {}
+        options.method = "POST"
+        options.headers = { "Content-type": "application/json" }
+        options.body = JSON.stringify(customerDetails)
+        const addedCustomer = await fetch(customerURL, options).then(handleHttpErrors)
+    
+        options.body = JSON.stringify(reservationDetails)
+        const addedReservation = await fetch(reservationURL, options).then(handleHttpErrors)
+        } else {
+            document.getElementById("error-msg").style.display = "block"
+    }
 }
-
-
-
