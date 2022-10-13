@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./booking.js" type="module"></script>
+    <link rel="stylesheet" href="../../styles/booking.css">
+</head>
+
+<body>
+    <div>
+        <h3>Booking</h3>
+
+        <div>
+            <h5>Vælg dag</h5>
+            <div><label for="input-date">Dato:</label><input placeholder="dd-mm-yyyy" id="input-date"></div>
+        </div>
+
+        <div>
+            <h5>Vælg aktiviteter</h5>
+            <div>
+                <button id="btn-activity-sumo" value="sumo">Sumobrydning</button>
+                <button id="btn-activity-minigolf" value="minigolf">Minigolf</button>
+                <button id="btn-activity-paintball" value="paintball">Paintball</button>
+                <button id="btn-activity-gokart" value="gokart">Gokart</button>
+            </div>
+        </div>
+
+        <div>
+            <h3>Tider</h3>
+
+            <div id="outer">
+                <div id="10" class="my-div">10:00 - 11:00</div>
+                <div id="11" class="my-div">11:00 - 12:00</div>
+                <div id="12" class="my-div">12:00 - 13:00</div>
+                <div id="13" class="my-div">13:00 - 14:00</div>
+                <div id="14" class="my-div">14:00 - 15:00</div>
+                <div id="15" class="my-div">15:00 - 16:00</div>
+                <div id="16" class="my-div">16:00 - 17:00</div>
+                <div id="17" class="my-div">17:00 - 18:00</div>
+                <div id="18" class="my-div">18:00 - 19:00</div>
+                <div id="19" class="my-div">19:00 - 20:00</div>
+                <div id="20" class="my-div">20:00 - 21:00</div>
+                <div id="21" class="my-div">21:00 - 22:00</div>
+            </div>
+
+            <!--<table class="table">
+                <thead id="thead">
+                    <th id="ts-9-10">9:00 - 10:00</th>
+                    <th id="ts-10-11">10:00 - 11:00</th>
+                    <th id="ts-11-12">11:00 - 12:00</th>
+                    <th id="ts-12-13">12:00 - 13:00</th>
+                    <th id="ts-13-14">13:00 - 14:00</th>
+                    <th id="ts-14-15">14:00 - 15:00</th>
+                    <th id="ts-15-16">15:00 - 16:00</th>
+                    <th id="ts-16-17">16:00 - 17:00</th>
+                    <th id="ts-18-19">18:00 - 19:00</th>
+                    <th id="ts-20-21">20:00 - 21:00</th>
+                    <th id="ts-21-22">21:00 - 22:00</th>
+                </thead>
+            </table>-->
+        </div>
+        <div class="loginPopup">
+            <div class="formPopup" id="popupForm">
+                <form class="formContainer">
+                    <h2>Please Log in</h2>
+                    <label for="email">
+                        <strong>E-mail</strong>
+                    </label>
+                    <input type="text" id="email" placeholder="Your Email" name="email" required>
+                    <label for="psw">
+                        <strong>Password</strong>
+                    </label>
+                    <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+                    <button type="submit" class="btn">Log in</button>
+                    <button type="button" id="btn-close-form" class="btn cancel">Close</button>
+                </form>
+            </div>
+
+</body>
+
+</html>
