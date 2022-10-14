@@ -1,8 +1,17 @@
+/* Imports START */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Shadows+Into+Light&display=swap');
+
+/* Imports SLUT */
+
 body {
-  background-image: url('../images/adventureBG.png');
+  background-image: url('../images/Indexbaggrund.jpg');
   font-family: sans-serif;
   height: 100%;
   width: 100%;
+}
+
+h2 {
+  font-family: 'Shadows Into Light', cursive;
 }
 
 /* Navbar START */
@@ -87,9 +96,30 @@ body {
 .index-text {
   font-family: nimbus;
   margin-top: 5%;
+  margin-left: -5%;
   width: 700px;
 
   box-sizing: 24px 40px;
+}
+
+.tekst-knap {
+  border: none;
+  padding: .75rem 1.25rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+
+  border: 1px solid black;
+  background-color: transparent;
+  color: rgb(11, 10, 10);
+  border-radius: 10rem;
+}
+
+.tekst-knap:hover {
+  background-color: rgb(12, 12, 12);
+  color: #c9e265
 }
 
 .index-carousel {
@@ -126,7 +156,7 @@ body {
   width: 100%;
   max-height: 60px;
 
-  background-color: #42af02;
+  background-color: #dfdfdfc0;
 }
 
 .footer-socials {
