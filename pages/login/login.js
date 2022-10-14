@@ -29,11 +29,14 @@ const password = document.querySelector('#password-field');
 
 
 
-loginButton.addEventListener("click", (e) => {
+loginButton.addEventListener("click", async(e) => {
     e.preventDefault();
 
     const username = loginForm.username.value;
     const password = loginForm.password.value;
+    const loginInfo = await fetch(employeeURL).then(l => l.json())
+    //listOfEmployees = loginInfo.map(emp => emp)
+    console.log(loginInfo)
 
     if (username === employeeURL.username && password === employeeURL.password) {
         alert("Du har logget ind");
