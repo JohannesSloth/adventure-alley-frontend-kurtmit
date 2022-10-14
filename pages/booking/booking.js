@@ -6,15 +6,13 @@ import {customerURL} from "../../util.js"
 
 document.getElementById("outer").style.display = "none"
 
-document.getElementById("btn-activity-sumo").onclick = checkAvailability
-document.getElementById("btn-activity-minigolf").onclick = checkAvailability
-document.getElementById("btn-activity-paintball").onclick = checkAvailability
-document.getElementById("btn-activity-gokart").onclick = checkAvailability
+document.getElementById("activities").onclick = checkAvailability
 
 let activityName = ''
 let listOfReservedTimeslots = []
 
 export async function checkAvailability(activity){
+    listOfReservedTimeslots = []
     const date = document.getElementById("input-date").value
     if (date !== "") {
         document.getElementById("outer").style.display = "block"
@@ -23,23 +21,20 @@ export async function checkAvailability(activity){
     activityName = activity.target.value
     const url = reservationURL + activityName + '/' + date
 
-    console.log(date);
-    
     const dayReservations = await fetch(url).then(r => r.json())
     listOfReservedTimeslots = dayReservations.map(res => res.startTime)
     
     for (let i = 10; i < 22; i++){
-        changecolor('black',1, i + '')
+        changecolor("rgb(119, 255, 51)", i + '')
         if (listOfReservedTimeslots.includes(i + '')){
-            changecolor('grey',0.5, i + '')
+            changecolor("rgb(255, 102, 102)", i + '')
         }
     }
 }
 
-function changecolor(color, opacity ,elementId){
-    document.getElementById(elementId).style.borderColor = color
-    document.getElementById(elementId).style.textcolor = color
-    document.getElementById(elementId).style.opacity = opacity
+function changecolor(color ,elementId){
+    document.getElementById(elementId).style.backgroundColor = color
+    
 }
 
 document.getElementById("outer").onclick = openForm
@@ -104,8 +99,13 @@ async function makeReservation(){
         options.body = JSON.stringify(customerDetails)
         const addedCustomer = await fetch(customerURL, options).then(handleHttpErrors)
     
-        options.body = JSON.stringify(reservationDetails)
-        const addedReservation = await fetch(reservationURL, options).then(handleHttpErrors)
+        
+        const options1 = {}
+        options1.method = "POST"
+        options1.headers = { "Content-type": "application/json" }
+        options1.body = JSON.stringify(reservationDetails)
+    
+        const addedReservation = await fetch(reservationURL, options1).then(handleHttpErrors).catch(err => console.log(err))
         } else {
             document.getElementById("error-msg").style.display = "block"
     }

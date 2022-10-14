@@ -11,17 +11,42 @@
 </head>
 
 <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img class="adventure-logo" src="../../images/adventureLOGO.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler9"
+            aria-controls="navbarToggler9" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler9">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/aktiviteter/aktiviteter.html">Aktiviteter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Udstyr</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/booking/booking.html">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/login/login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div id="div-everything">
         <h3>Booking</h3>
 
         <div>
-            <h5>Vælg dag</h5>
+            <h5 class="centrer">Vælg dag</h5>
             <div><label for="input-date">Dato:</label><input type="date" placeholder="dd-mm-yyyy" id="input-date"></div>
         </div>
 
         <div>
-            <h5>Vælg aktiviteter</h5>
-            <div>
+            <h5 class="centrer">Vælg aktiviteter</h5>
+            <div id="activities">
                 <button id="btn-activity-sumo" value="sumo">Sumobrydning</button>
                 <button id="btn-activity-minigolf" value="minigolf">Minigolf</button>
                 <button id="btn-activity-paintball" value="paintball">Paintball</button>
@@ -30,8 +55,8 @@
         </div>
 
         <div>
-            <h3>Tider</h3>
-
+            <h3 class="centrer">Tider</h3>
+            
             <div id="outer">
                 <p id="10" class="my-div">10:00 - 11:00</p>
                 <p id="11" class="my-div">11:00 - 12:00</p>
