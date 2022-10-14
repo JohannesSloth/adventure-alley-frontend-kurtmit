@@ -28,16 +28,18 @@ export async function checkAvailability(activity){
     const dayReservations = await fetch(url).then(r => r.json())
     listOfReservedTimeslots = dayReservations.map(res => res.startTime)
     
-    for (let i = 10; i < 23; i++){
-        changecolor('green', i + '')
+    for (let i = 10; i < 22; i++){
+        changecolor('black',1, i + '')
         if (listOfReservedTimeslots.includes(i + '')){
-            changecolor('red', i + '')
+            changecolor('grey',0.5, i + '')
         }
     }
 }
 
-function changecolor(color, elementId){
-    document.getElementById(elementId).style.backgroundColor = color
+function changecolor(color, opacity ,elementId){
+    document.getElementById(elementId).style.borderColor = color
+    document.getElementById(elementId).style.textcolor = color
+    document.getElementById(elementId).style.opacity = opacity
 }
 
 document.getElementById("outer").onclick = openForm
