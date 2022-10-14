@@ -1,4 +1,5 @@
 import { employeeURL } from "../../util.js";
+let router;
 
 
 const loginForm = document.getElementById("login-form");
@@ -8,39 +9,61 @@ const loginErrorMsg = document.getElementById("login-error-msg");
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password-field');
 
-/*loginButton.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const username = loginForm.username.value;
-    const password = loginForm.password.value;
 
-    const employee = await fetch(employeeURL).then(e => e.json())
-    const employees = []
-    employee.map(employee => employees[employee])
-
-    for (let i = 0; i < employees.length; i++){
-        if (employees[i].username === username && employees[i].password === password) {
-            alert("You have successfully logged in.");
-            location.reload();
-        } else {
-            loginErrorMsg.style.opacity = 1;
-        }
+/*async function employeeLogin() {
+    const loginInfo = {
+        userName: document.getElementById("username-field").value,
+        password: document.getElementById("password-field").value
     }
-})*/
+
+    const opts = {}
+    opts.method = "POST"
+    opts.headers = { "Content-type": "application/json" }
+    opts.body = JSON.stringify(loginInfo)
+
+    await fetch(employeeURL, opts).then(response => {
+        
+    })
+}*/
 
 
-//Dette er login-formen med predefineret værdier indtil videre
+
+
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
+
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "1" && password === "2") {
+    if (username === employeeURL.username && password === employeeURL.password) {
         alert("Du har logget ind");
         location.reload();
     } else {
         loginErrorMsg.style.opacity = 1;
     }
+
+    /*if (username === "1" && password === "2") {
+        alert("Du har logget ind");
+        location.reload();
+    } else {
+        loginErrorMsg.style.opacity = 1;
+    }*/
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Dette er vis/skjul funktionen til password
 togglePassword.addEventListener('click', function (e) {

@@ -9,14 +9,12 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -52,9 +50,14 @@
                 timer! Adventure Alley tilbyder ud over en masse aktiviteter for hele familien, også arealer i parken
                 hvor der findes mange muligheder for at nyde medbragt mad. Parkens café tilbyder også mad og drikke
                 samt udlejning af grill. Udover en hyggelig oplevelse for familien.</p><br>
-            <button type="button" class="tekst-knap">Læs mere</button>
-            <button type="button" class="tekst-knap">Besøg os</button>
-
+            <button type="button" class="tekst-knap" data-bs-container="body" data-bs-toggle="popover"
+                data-bs-placement="bottom" data-bs-html="true"
+                data-bs-content="<strong>Find os her:</strong><br />Foccaciaparken 5, 17. tv<br />1218 København<br /> Danmark<br /><br /><strong>Åbningstider:</strong><br />Mandag-Søndag: 10-22<br />">Besøg
+                os</button>
+            <button type="button" class="tekst-knap" data-bs-container="body" data-bs-toggle="popover"
+                data-bs-placement="right" data-bs-html="true"
+                data-bs-content="<strong>Adventure Alley</strong> er en aktivitetspark centreret i hjertet af København. Parken åbnede i 1741 hvilket gør Adventure Alley til verdens ældste underholdnings venue. Folk tror som regel at det er Bakken i Klampenborg, som er verdens ældste, men fuck dem. Det er os. Vi vinder.   ">Læs
+                mere</button>
         </div>
 
         <div class="index-carousel">
@@ -95,7 +98,12 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
+<script src="index.js" type="module"></script>
 
 <footer class="footer mt-auto py-3">
 
