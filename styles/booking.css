@@ -1,3 +1,7 @@
+input{
+  max-height: 2rem !important;
+}
+
 body{
   background-image: url('../images/Plainbaggrund.png');
   height: 100%;
@@ -22,6 +26,7 @@ body{
     position: fixed;
   }
   .loginPopup {
+    line-height: 40%;
     position: relative;
     text-align: center;
     width: 100%;
@@ -29,8 +34,8 @@ body{
   .formPopup {
     display: none;
     position: fixed;
-    left: 75%;
-    top: 5%;
+    left: 80%;
+    top: 10%;
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
