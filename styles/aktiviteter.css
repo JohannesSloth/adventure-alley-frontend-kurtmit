@@ -5,7 +5,7 @@
   }
 
 body {
-    background-image: url('../images/aktiviteter.png');
+    background-image: url('../images/Plainbaggrund.png');
     background-size:cover;
     font-family: sans-serif;
 
@@ -116,8 +116,8 @@ position: relative;
 }
 
 .card-img-top {
-    width:auto;
-    height: 300px;
+    width:100% !important;
+    height: 200px;
 }
 
 .card {
