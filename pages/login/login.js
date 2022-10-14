@@ -27,6 +27,7 @@ const password = document.querySelector('#password-field');
     }
 })*/
 
+
 //Dette er login-formen med predefineret værdier indtil videre
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -34,7 +35,7 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "1" && password === "2") {
-        alert("You have successfully logged in.");
+        alert("Du har logget ind");
         location.reload();
     } else {
         loginErrorMsg.style.opacity = 1;
